@@ -1,15 +1,16 @@
 # cps371-nathan-gray-server
 Serves and caches requests for weather data from the application stored in cps371-nathan-gray-weather
 
-# Server Address
+## Server Address
 http://cps-371-weather-app-server.appspot.com/
 
 Requests made to the server must have a querystring of this structure: "zip=01984".
 
-# API
+## API
 Contains only the necessary data in a similar structure to the JSON returned by forecast.io.
 Uses both a "currently" and a "daily" array with items of similar name and format.
 
+```json
 {
   "currently": {
     "icon": "cloudy",
@@ -30,8 +31,9 @@ Uses both a "currently" and a "daily" array with items of similar name and forma
     ...
   ]
 }
+```
 
-# Caching Strategy
+## Caching Strategy
 The cache is organized in a singleton class called Cache.java
 
 Requests sent to forecast.io are stored in a static HashMap indexed by zip code.
