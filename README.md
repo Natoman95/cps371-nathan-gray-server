@@ -26,9 +26,9 @@ Uses both a "currently" and a "daily" array with items of similar name and forma
       "time": 1456117200,
       "minTemp": 26.66
     },
-    ...
-    ...
-    ...
+    {
+      "more data..."
+    }
   ]
 }
 ```
