@@ -33,6 +33,13 @@ Uses both a "currently" and a "daily" array with items of similar name and forma
 }
 ```
 
+## Request-handling Strategy
+When the server gets a request with a zip code query string it makes a request to maps.googleapis.com to discover the latitude and longitude associated with that zip code.
+
+It then makes a request to forecast.io to get weather data for the latitude and longitude. Next the server creates a new JSON object with only the essential data for use by the weather app.
+
+That data is then cached and sent back to the app.
+
 ## Caching Strategy
 The cache is organized in a singleton class called Cache.java
 
