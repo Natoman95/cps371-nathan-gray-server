@@ -36,7 +36,7 @@ public class HelloServlet extends HttpServlet {
     resp.setContentType("application/json; charset=utf-8");
     PrintWriter out = resp.getWriter();
     // Get zip code from req query String
-    String zip = this.getZip(req.getQueryString());
+    String zip = req.getParameter("zip");
     // If the cache contains recent data indexed under this zip code, then just
     // send the data stored in the cache
     if (theCache.getRequest(zip) != null) {
@@ -81,14 +81,5 @@ public class HelloServlet extends HttpServlet {
     String urlString = apiUrl + zip + "&key=" + apiKey;
 
     return urlString;
-  }
-
-  /**
-  * Gets the zip code from the query string
-  */
-  private String getZip(String queryString) {
-    String zip = queryString.split("=")[1];
-
-    return zip;
   }
 }
